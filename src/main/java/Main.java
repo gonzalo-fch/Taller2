@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Por favor, seleccione una de las opcíones");
         System.out.println("[1] Contar la cantidad de pares Adyacentes");
         System.out.println("[2] Mostrar Los pares de numeros adyacentes");
-        System.out.println("[2] Mostrar el producto mayor de los pares de números adyacentes");
+        System.out.println("[3] Mostrar el producto mayor de los pares de números adyacentes");
     }
 
     public static void iniciador() {
@@ -42,7 +42,8 @@ public class Main {
                     a=true;
                     break;
                 case "3":
-                    mayor();
+                    System.out.println("El numero mayor es");
+                    System.out.println(buscarNumeroMayor(num()));
                     a=true;
                     break;
                 default:
@@ -89,8 +90,12 @@ public class Main {
     }
 
     public static ArrayList<Integer> mult(int num1, int num2){
-        ArrayList<Integer> num=new ArrayList<>();
+        ArrayList<Integer> num= num();
         num.add(num1*num2);
+        return num;
+    }
+    public static ArrayList<Integer> num(){
+        ArrayList<Integer> num = new ArrayList<>();
         return num;
     }
     public static void mostrar(ArrayList a) {
@@ -100,8 +105,15 @@ public class Main {
         }
     }
 
-    public static void mayor() {
 
+    public static int buscarNumeroMayor(ArrayList<Integer> num) {
+        int mayor = num.get(num.size());
+        for (int x = 1; x < num.size(); x++) {
+            if (num.get(x) > mayor) {
+                mayor = num.get(x);
+            }
+        }
+        return mayor;
     }
 
     public static boolean Salir() {
