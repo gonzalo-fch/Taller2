@@ -8,8 +8,6 @@ public class Main {
         iniciador();
     }
 
-
-
     public static void menu1() {
         System.out.println("Por favor, seleccione una de las opcíones");
         System.out.println("[1] Contar la cantidad de pares Adyacentes");
@@ -78,14 +76,22 @@ public class Main {
         ArrayList<String> par = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (i == arr.length) {
-                par.add(""+arr[i]+"," + (random(2000)-999));
+                int b = random(2000)-999;
+                par.add(""+arr[i]+"," + (b));
+                mult(arr[i],b);
             }
-            if (i<arr.length-1){
+            if (i<arr.length-1) {
                 par.add("" + arr[i] + "," + arr[i + 1]);
-
+                mult(arr[i],arr[i+1]);
             }
         }
         return par;
+    }
+
+    public static ArrayList<Integer> mult(int num1, int num2){
+        ArrayList<Integer> num=new ArrayList<>();
+        num.add(num1*num2);
+        return num;
     }
     public static void mostrar(ArrayList a) {
         System.out.println("Los pares son:");
