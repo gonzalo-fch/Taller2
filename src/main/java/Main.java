@@ -8,14 +8,14 @@ public class Main {
 
 
 
-    private static void menu1() {
+    public static void menu1() {
         System.out.println("Por favor, seleccione una de las opcíones");
         System.out.println("[1] Contar la cantidad de pares Adyacentes");
         System.out.println("[2] Mostrar Los pares de numeros adyacentes");
         System.out.println("[2] Mostrar el producto mayor de los pares de números adyacentes");
     }
 
-    private static void iniciador() {
+    public static void iniciador() {
         do {
             String b;
             do {
@@ -25,7 +25,7 @@ public class Main {
         }while (Salir()==false);
     }
 
-    private static String seleccionAcciones() {
+    public static String seleccionAcciones() {
         boolean a = false;
         String b;
         do {
@@ -52,28 +52,36 @@ public class Main {
         return b;
     }
 
-    private static int[] creararreglo() {
-        Random rnum = new Random();
-        int[] arr = new int[rnum.nextInt(10)];
+    public static int[] creararreglo() {
+        int[] arr = new int[random(10)];
         return arr;
     }
 
+    public static int random(int a){
+        Random rnum = new Random();
+        return rnum.nextInt(a);
+    }
 
 
-    private static int[] rellenarArreglo( int[] arr){
+    public static int[] rellenarArreglo( int[] arr){
         for (int i = 0; i < arr.length; i++) {
-            arr[i]=5;
+            arr[i]=random(2000)-999;
         }
-return arr;
+        return arr;
     }
 
-    private static void mostrar() {
+    public static int[] pares( int[] arr) {
+
+
+        return arr;
+    }
+    public static void mostrar() {
     }
 
-    private static void mayor() {
+    public static void mayor() {
     }
 
-    private static boolean Salir() {
+    public static boolean Salir() {
         boolean a;
         boolean b = false;
         String opcion;
@@ -100,7 +108,7 @@ return arr;
         return b;
     }
 
-    private static boolean validacion(String b) {
+    public static boolean validacion(String b) {
         boolean a = false;
         do {
             switch (b){
@@ -119,7 +127,7 @@ return arr;
         return a;
     }
 
-    private static String ingresarRespuesta() {
+    public static String ingresarRespuesta() {
         Scanner teclado= new Scanner(System.in);
         return teclado.next();
     }
