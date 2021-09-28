@@ -43,11 +43,11 @@ public class Main {
                     break;
                 case "3":
                     System.out.println("El numero mayor es");
-                    System.out.println(buscarNumeroMayor(num()));
+                    System.out.println(buscarNumeroMayor(mayor(rellenarArreglo(creararreglo()))));
                     a=true;
                     break;
                 default:
-                    System.out.println("Entrada no Valida");
+                    System.out.println("Caracter no Valida");
                     a=false;
                     break;
             }
@@ -79,24 +79,26 @@ public class Main {
             if (i == arr.length) {
                 int b = random(2000)-999;
                 par.add(""+arr[i]+"," + (b));
-                mult(arr[i],b);
             }
             if (i<arr.length-1) {
                 par.add("" + arr[i] + "," + arr[i + 1]);
-                mult(arr[i],arr[i+1]);
             }
         }
         return par;
     }
 
-    public static ArrayList<Integer> mult(int num1, int num2){
-        ArrayList<Integer> num= num();
-        num.add(num1*num2);
-        return num;
-    }
-    public static ArrayList<Integer> num(){
-        ArrayList<Integer> num = new ArrayList<>();
-        return num;
+    public static ArrayList<Integer> mayor( int[] arr) {
+        ArrayList<Integer> par = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (i == arr.length) {
+                int b = random(2000)-999;
+                par.add(arr[i] * (b));
+            }
+            if (i<arr.length-1) {
+                par.add(arr[i]*arr[i + 1]);
+            }
+        }
+        return par;
     }
     public static void mostrar(ArrayList a) {
         System.out.println("Los pares son:");
@@ -107,8 +109,8 @@ public class Main {
 
 
     public static int buscarNumeroMayor(ArrayList<Integer> num) {
-        int mayor = num.get(num.size());
-        for (int x = 1; x < num.size(); x++) {
+        int mayor = num.get(0);
+        for (int x = 0; x < num.size(); x++) {
             if (num.get(x) > mayor) {
                 mayor = num.get(x);
             }
@@ -151,6 +153,9 @@ public class Main {
                     a=true;
                     break;
                 case "2":
+                    a=true;
+                    break;
+                case "3":
                     a=true;
                     break;
                 default:
