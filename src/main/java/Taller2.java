@@ -79,4 +79,16 @@ public class Taller2 {
 
         }
     }
+
+    public static double buscarNumeroMayor(double[] numeros) {
+        double mayor = numeros[0];
+        for (int x = 1; x < numeros.length; x++) {
+            if (numeros[x] > mayor) {
+                mayor = numeros[x];
+            }
+        }
+        return mayor;
+    }
+
+
 }
